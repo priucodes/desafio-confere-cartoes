@@ -1,9 +1,10 @@
 import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 import User from '../app/models/User';
+import Card from '../app/models/Card';
 
 // Create an array with the models
-const models = [User];
+const models = [User, Card];
 
 class Database {
   constructor() {

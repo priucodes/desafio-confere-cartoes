@@ -11,7 +11,7 @@ module.exports = {
       allowNull: false,
     },
     expiry: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DATE,
       allowNull: false,
     },
     cvv: {

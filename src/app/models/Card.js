@@ -5,7 +5,7 @@ class Card extends Model {
     super.init(
       {
         number: Sequelize.INTEGER,
-        expiry: Sequelize.INTEGER,
+        expiry: Sequelize.DATE,
         cvv: Sequelize.INTEGER,
         holder: Sequelize.STRING,
       },
