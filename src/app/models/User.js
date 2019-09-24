@@ -16,11 +16,21 @@ class User extends Model {
       },
     );
 
+    // HASHING THE PASSWORD
     this.addHook('beforeSave', async (user) => {
       if (user.password) {
         user.password_hash = await bcrypt.hash(user.password, 8);
       }
     });
+    return this;
+  }
+
+  static associate(models) {
+    this.belongsTo(models.Card, { foreignKey: 'card_id' });
+  }
+
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
   }
 }
 
