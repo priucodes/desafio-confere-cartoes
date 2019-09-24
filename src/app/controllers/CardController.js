@@ -6,6 +6,7 @@ import Card from '../models/Card';
  * - [] Fix the date format for the expiry
  * - [] Validate the card number size
  * - [] Validate the card cvv size
+ * - [] Validade if the user name and the holder name are the same
  */
 
 class CardController {
