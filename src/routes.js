@@ -8,5 +8,6 @@ const routes = new Router();
 routes.post('/users', UserController.store);
 routes.post('/cards', CardController.store);
 routes.post('/transactions', TransactionController.store);
+// routes.get('/transactions', TransactionController.index);
 
 export default routes;
