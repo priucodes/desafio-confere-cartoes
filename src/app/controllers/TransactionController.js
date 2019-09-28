@@ -17,28 +17,9 @@ import Transaction from '../models/Transaction';
  */
 
 class TransactionController {
-  async store(req, res) {
-    const {
-      id,
-      value,
-      description,
-      type_transaction,
-      installments
-    } = await Transaction.create(req.body);
+  async store(req, res) {}
 
-    return res.json({
-      id,
-      value,
-      description,
-      type_transaction,
-      installments
-    });
-  }
-
-  async index(req, res) {
-    // where user_id
-    // const transactions = await Transaction.findAll({where: {}})
-  }
+  async index(req, res) {}
 }
 
 export default new TransactionController();

@@ -7,11 +7,11 @@ class Transaction extends Model {
         value: Sequelize.INTEGER,
         description: Sequelize.STRING,
         type_transaction: Sequelize.STRING,
-        installments: Sequelize.INTEGER
+        installments: Sequelize.INTEGER,
       },
       {
-        sequelize
-      }
+        sequelize,
+      },
     );
 
     return this;

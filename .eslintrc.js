@@ -14,8 +14,9 @@ module.exports = {
   },
   rules: {
     'class-methods-use-this': 0,
-    camelcase: { properties: 'never' }
+    camelcase: [0, { properties: 'never' }]
   },
+
   env: {
     jest: true
   }
