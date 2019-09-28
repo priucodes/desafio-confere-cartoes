@@ -1,9 +1,10 @@
+import { format } from 'date-fns';
 import Card from '../models/Card';
 
 /**
  * TODO:
  * - [x] Save and return only the last 4 card digits
- * - [] Fix the date format for the expiry
+ * - [x] Fix the date format for the expiry
  * - [] Validate the card number size
  * - [] Validate the card cvv size
  *
@@ -20,10 +21,12 @@ class CardController {
     // Retuning only the last 4 digits
     const number_digits = number.toString();
     const lastFour = number_digits.substr(number_digits.length - 4);
+    const formatted_expiry = format(expiry, 'yy-MM');
+
     return res.json({
       id,
       lastFour,
-      expiry,
+      formatted_expiry,
       cvv,
       holder,
     });
