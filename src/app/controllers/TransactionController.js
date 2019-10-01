@@ -1,18 +1,6 @@
 import { addDays } from 'date-fns';
 import Transaction from '../models/Transaction';
 
-/**
- * TODO:
- * - [] List all of the transactions
- * - [x] if type="debit" - status="received" - received_date (created_at + 0)
- * - [x] if type="credit" - installment=null - status="expected" - received_date(created_at + 30)
- * - [x] if type="credit" - installment=N - status="expected" - received_date(created_at + (30 * N))
- * - [x] 2,8% type="debit"
- * - [x] 3,2% type="credit" installments="null"
- * - [x] 3.8% type="credit" installments="2 - 6"
- * - [x] 4.2% type="credit" installments="7 - 12"
- */
-
 class TransactionController {
   async store(req, res) {
     const { type_transaction, value, installments } = req.body;
