@@ -2,18 +2,6 @@ import { format } from 'date-fns';
 import * as Yup from 'yup';
 import Card from '../models/Card';
 
-/**
- * TODO:
- * - [x] Save and return only the last 4 card digits
- * - [x] Fix the date format for the expiry
- * - [] Validate the minimum card cvv size
- * - [] Validate the minimum card number size
- *
- * OBSERVATIONS:
- * - The card can be used by various users
- * - For now, it's needed to insert the full date - fix later
- */
-
 class CardController {
   async store(req, res) {
     const schema = Yup.object().shape({
