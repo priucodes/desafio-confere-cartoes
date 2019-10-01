@@ -19,25 +19,32 @@ import Transaction from '../models/Transaction';
 
 class TransactionController {
   async store(req, res) {
-    const { type_transaction, value, installments } = req.body;
+    const {
+      type_transaction, value, installments, created_at,
+    } = req.body;
     if (type_transaction === 'debit') {
       req.body.value = parseInt(value) + 28 / 10;
+      req.body.status = 'received';
       // req.body.created_at =
 
       // CREDIT
     }
     if (type_transaction === 'credit') {
       req.body.value = parseInt(value) + 32 / 10;
+      req.body.status = 'expected';
+      // req.body.received_date = created_at +
 
       // CREDIT INSTALLMENT 2 - 6
     }
     if (type_transaction === 'credit' && (installments >= 2 && installments <= 6)) {
       req.body.value = parseInt(value) + 38 / 10;
+      req.body.status = 'expected';
 
       // CREDIT INSTALLMENT 7 - 12
     }
     if (type_transaction === 'credit' && (installments >= 7 && installments <= 12)) {
       req.body.value = parseInt(value) + 42 / 10;
+      req.body.status = 'expected';
     }
     if (installments > 12) {
       return res.status(401).json({ error: 'Insert a valid installment number 2-12' });

@@ -8,6 +8,8 @@ class Transaction extends Model {
         description: Sequelize.STRING,
         type_transaction: Sequelize.STRING,
         installments: Sequelize.INTEGER,
+        status: Sequelize.STRING,
+        received_date: Sequelize.DATE,
       },
       {
         sequelize,

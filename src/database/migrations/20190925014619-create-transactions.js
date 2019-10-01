@@ -42,6 +42,12 @@ module.exports = {
       onDelete: 'SET NULL',
       allowNull: true,
     },
+    status: {
+      type: Sequelize.STRING,
+    },
+    received_date: {
+      type: Sequelize.DATE,
+    },
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,
