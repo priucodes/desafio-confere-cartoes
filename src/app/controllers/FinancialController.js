@@ -1,3 +1,4 @@
+import sequelize from 'sequelize';
 import Transaction from '../models/Transaction';
 
 class FinancialController {
@@ -15,6 +16,7 @@ class FinancialController {
         'installments',
         'status',
         'received_date',
+        [sequelize.fn('sum', sequelize.col('value')), 'total'],
       ],
     });
     return res.json(transactions);
