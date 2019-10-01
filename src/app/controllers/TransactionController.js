@@ -2,6 +2,7 @@ import Transaction from '../models/Transaction';
 
 /**
  * TODO:
+ * - [] add status to the model as a BOOLEAN
  * - [] Validate the transactions
  * - [] The user can only create a transaction if he has a card associated
  * - [] List all of the transactions
@@ -17,9 +18,35 @@ import Transaction from '../models/Transaction';
  */
 
 class TransactionController {
-  async store(req, res) {}
+  async store(req, res) {
+    const { type_transaction, value, installments } = req.body;
+    if (type_transaction === 'debit') {
+      req.body.value = parseInt(value) + 28 / 10;
+      // req.body.created_at =
 
-  async index(req, res) {}
+      // CREDIT
+    }
+    if (type_transaction === 'credit') {
+      req.body.value = parseInt(value) + 32 / 10;
+
+      // CREDIT INSTALLMENT 2 - 6
+    }
+    if (type_transaction === 'credit' && (installments >= 2 && installments <= 6)) {
+      req.body.value = parseInt(value) + 38 / 10;
+
+      // CREDIT INSTALLMENT 7 - 12
+    }
+    if (type_transaction === 'credit' && (installments >= 7 && installments <= 12)) {
+      req.body.value = parseInt(value) + 42 / 10;
+    }
+    if (installments > 12) {
+      return res.status(401).json({ error: 'Insert a valid installment number 2-12' });
+    }
+    const transaction = await Transaction.create(req.body);
+    return res.json(transaction);
+  }
+
+  // async index(req, res) {}
 }
 
 export default new TransactionController();

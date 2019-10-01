@@ -14,7 +14,8 @@ module.exports = {
   },
   rules: {
     'class-methods-use-this': 0,
-    camelcase: [0, { properties: 'never' }]
+    camelcase: [0, { properties: 'never' }],
+    "no-param-reassign": 0
   },
 
   env: {

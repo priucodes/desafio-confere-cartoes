@@ -4,7 +4,7 @@ class Transaction extends Model {
   static init(sequelize) {
     super.init(
       {
-        value: Sequelize.INTEGER,
+        value: Sequelize.FLOAT,
         description: Sequelize.STRING,
         type_transaction: Sequelize.STRING,
         installments: Sequelize.INTEGER,

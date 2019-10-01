@@ -5,4 +5,15 @@
 
 Project created for [**Confere Cartões**](https://www.conferecartoes.com.br/) code challenge.
 
+To run the project locally you need to set a PostgreSQL docker container and create a database.
+
+
+## Tests
+
+To test the project run the following command:
+```
+yarn test
+```
+
+
 **Author:** [Priscilla Ribeiro](https://prscribeiro.com)

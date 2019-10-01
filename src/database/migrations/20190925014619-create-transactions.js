@@ -7,7 +7,7 @@ module.exports = {
       primaryKey: true,
     },
     value: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
     description: {
