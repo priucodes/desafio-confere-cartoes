@@ -3,8 +3,6 @@ import Transaction from '../models/Transaction';
 
 /**
  * TODO:
- * - [] Validate the transactions
- * - [] The user can only create a transaction if he has a card associated
  * - [] List all of the transactions
  * - [x] if type="debit" - status="received" - received_date (created_at + 0)
  * - [x] if type="credit" - installment=null - status="expected" - received_date(created_at + 30)
@@ -50,7 +48,16 @@ class TransactionController {
     return res.json(transaction);
   }
 
-  // async index(req, res) {}
+  // LISTING ALL TRANSACTIONS CREATED BY AN USER
+  async index(req, res) {
+    const { user_id } = req.body;
+    const transactions = await Transaction.findAll({
+      where: { user_id },
+      order: ['created_at'],
+      attributes: ['id', 'created_at', 'description', 'value', 'type_transaction', 'installments'],
+    });
+    return res.json(transactions);
+  }
 }
 
 export default new TransactionController();
