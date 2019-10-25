@@ -5,18 +5,26 @@
 
 Project created for [**Confere Cartões**](https://www.conferecartoes.com.br/) code challenge.
 
-- Run yarn to install all dependencies
-- To run the project locally you need to set a PostgreSQL docker container and create a database.
+- Run ``yarn`` to install all the dependencies
+- To run the project locally, you need to set a **PostgreSQL Docker Container** and create a database.
 - Run ``yarn sequelize db:migrate`` to create the DB migrations
 - To run the project you need to go to the ``http://localhost:8888`` endpoint
 
 
-## Tests
+## Running Tests :fire:
 
 To test the project run the following command:
 ```
 yarn test
 ```
 
+## Built with 
+
+- [NodeJs](https://nodejs.org/en/)
+- [ExpressJs](https://expressjs.com/)
+- [Docker](https://www.docker.com/)
+- [Jest](https://jestjs.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Sequelize](https://sequelize.org/)
 
 **Author:** [Priscilla Ribeiro](https://prscribeiro.com)
